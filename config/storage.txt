@@ -1,1 +1,12 @@
+![new environment]
 
+[config/boot.sh]
+`
+echo 'booting...'
+sudo apt install linux_os_inner_code
+linux_os_inner_code start
+`
+[config/config.txt]
+`
+&(os-config.fcf)
+`
