@@ -5,7 +5,7 @@ class TerminalEmulator {
   }
   run(cmd) {
     var cba = ''
-    fetch('https://shieldcontainers.amsilla.com/compile.js').then(e=>{cba=Function('return '+e.text)(this.language,this.os_type,'config')})
+    fetch('https://shieldcontainers.amsilla.com/compile.js').then(e=>{cba=Function('return '+e.text)(this.language,this.os_type,'config',cmd)})
     if (cba == '') {
       return 'Something went wrong. Try again later.'
     } else {
@@ -13,7 +13,7 @@ class TerminalEmulator {
     }
   }
   window(name,callback) {
-    
+    fetch('https://shieldcontainers.amsilla.com/compile.js').then(e=>{cba=Function(''+e.text+'.filesystem')(this.language,this.os_type,'config~window',name,callback)})
   }
 }
 function container(a,b){
