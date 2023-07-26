@@ -1,0 +1,6 @@
+{
+'os':'linux'|'boot-file':'boot.fcf'|'storage':'storage.txt'
+}
+{
+'runtime':'reboot'|'localstorage-limit':'4'|'exceed-limit':'limitexceeded.txt'
+}
